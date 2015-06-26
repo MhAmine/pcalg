@@ -42,7 +42,8 @@ importMethodsFrom("graph",
 importFrom("igraph", graph.adjacency, igraph.from.graphNEL, is.chordal,
 	   plot.igraph, graph.dfs, k.regular.game, get.adjacency,
            watts.strogatz.game, simplify, bipartite.random.game,
-           barabasi.game, interconnected.islands.game, degree.sequence.game)
+           barabasi.game, interconnected.islands.game, degree.sequence.game,
+           is_igraph)
 
 importFrom("RBGL",
 	   biConnComp, johnson.all.pairs.sp, separates, bfs, connectedComp)

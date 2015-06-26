@@ -234,7 +234,7 @@ powerLawDAG <- function(n,gamma){
     if(sum(degs)%%2==1){degs[which.max(degs)] <- degs[which.max(degs)]-1}
     
     g <- try(degree.sequence.game(degs,method="vl"),silent=TRUE)
-    if(length(g)==9){done <- TRUE}
+    done <- is_igraph(g)
   }
   
   simplify(g)

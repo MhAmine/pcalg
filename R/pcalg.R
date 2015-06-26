@@ -7453,7 +7453,7 @@ extract.parent.sets <- function(x.pos,amat.cpdag,isCPDAG=FALSE){
       if(chordal[i] & nvar<=12){
         rownames(conn.comp.mat) <- colnames(conn.comp.mat) <- 1:nvar
         all.extensions <- allDags(conn.comp.mat,conn.comp.mat,NULL)
-        pa.fun <- function(amat,j) c(all.nodes[which(amat[,x.temp2[j]]!=0)],pasets.dir[[match(x.temp[j],x.pos)]])
+        pa.fun <- function(amat,j) c(as.vector(all.nodes[which(amat[,x.temp2[j]]!=0)]),as.vector(pasets.dir[[match(x.temp[j],x.pos)]]))
         parent.sets.fun <- function(r) lapply(1:length(x.temp),pa.fun,amat=matrix(all.extensions[r,],nrow=nvar))
         pasets.comp <- lapply(1:nrow(all.extensions),parent.sets.fun)
       }else{
